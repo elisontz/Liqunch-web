@@ -1,5 +1,14 @@
-name = "olauncher-site"
+name = "olauncher-web"
 compatibility_date = "2026-03-19"
 compatibility_flags = ["nodejs_compat"]
 
 pages_build_output_dir = ".vercel/output/static"
+
+[vars]
+NEXT_PUBLIC_DOWNLOAD_URL = "https://example.com/oLauncher.dmg"
+NEXT_PUBLIC_PADDLE_ENV = "sandbox"
+NEXT_PUBLIC_PADDLE_CLIENT_TOKEN = "test_client_token"
+NEXT_PUBLIC_PADDLE_SINGLE_PRICE_ID = "pri_single_placeholder"
+NEXT_PUBLIC_PADDLE_DOUBLE_PRICE_ID = "pri_double_placeholder"
+NEXT_PUBLIC_SUPPORT_EMAIL = "support@example.com"
+NEXT_PUBLIC_CURRENT_VERSION = "1.0.2"
