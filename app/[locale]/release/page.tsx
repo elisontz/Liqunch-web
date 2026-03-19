@@ -7,10 +7,6 @@ type Params = { locale: string };
 
 export const runtime = "edge";
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
 export default async function ReleasePage({ params }: { params: Promise<Params> }) {
   const { locale } = await params;
   if (!locales.includes(locale as (typeof locales)[number])) {

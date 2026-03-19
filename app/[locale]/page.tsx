@@ -7,10 +7,6 @@ import { locales, normalizeLocale } from "@/lib/site";
 
 export const runtime = "edge";
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
 type Params = { locale: string };
 
 export async function generateMetadata({
