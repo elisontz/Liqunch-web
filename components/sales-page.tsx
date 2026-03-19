@@ -24,19 +24,17 @@ export function SalesPage({ locale }: SalesPageProps) {
         <header className="site-header">
           <div className="site-header-copy">
             <p className="site-title">oLauncher</p>
-            <p className="header-copy">Launchpad for macOS 26.</p>
           </div>
           <LanguageSwitcher locale={locale} />
         </header>
         <main className="content-stack">
           <Hero
             title={content.hero.title}
-            subtitle={content.hero.subtitle}
             description={content.hero.description}
             primaryCta={content.hero.primaryCta}
             secondaryCta={content.hero.secondaryCta}
             primaryHref={siteConfig.downloadUrl}
-            secondaryPriceId={siteConfig.singlePriceId}
+            secondaryHref="#pricing"
             meta={content.hero.meta}
           />
           <StorySection
@@ -49,7 +47,7 @@ export function SalesPage({ locale }: SalesPageProps) {
             heading={content.pricing.heading}
             subtitle={content.pricing.subtitle}
             tiers={content.pricing.tiers}
-            ctaLabel={content.hero.secondaryCta}
+            ctaLabel={content.pricing.ctaLabel}
             recommendedTier={content.pricing.recommendedTier}
           />
         </main>

@@ -6,6 +6,13 @@ vi.mock("next/script", () => ({
   default: () => null
 }));
 
+vi.mock("next/navigation", () => ({
+  usePathname: () => "/zh",
+  useRouter: () => ({
+    push: vi.fn()
+  })
+}));
+
 afterEach(() => {
   cleanup();
 });

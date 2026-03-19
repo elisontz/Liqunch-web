@@ -9,9 +9,11 @@ describe("SalesPage", () => {
     render(<SalesPage locale="zh" />);
 
     expect(screen.getByRole("heading", { name: /找回 Launchpad/i })).toBeInTheDocument();
-    expect(screen.getByText(/Launchpad for macOS 26/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Launchpad for macOS 26/i)).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: /免费下载/i })).toHaveAttribute("href");
-    expect(screen.getAllByRole("button", { name: /解锁 PRO/i })).toHaveLength(3);
+    expect(screen.getByRole("link", { name: /购买 PRO 版/i })).toHaveAttribute("href", "#pricing");
+    expect(screen.getAllByRole("button", { name: /解锁 PRO/i })).toHaveLength(2);
+    expect(screen.getByRole("combobox", { name: /Language/i })).toBeInTheDocument();
     expect(screen.queryByTestId("hero-visual")).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /为什么很多人还是想要 Launchpad/i })).toBeInTheDocument();
     expect(screen.getByText(/不是为了多一种启动方式/i)).toBeInTheDocument();
@@ -26,9 +28,11 @@ describe("SalesPage", () => {
     render(<SalesPage locale="en" />);
 
     expect(screen.getByRole("heading", { name: /Bring Back Launchpad/i })).toBeInTheDocument();
-    expect(screen.getByText(/Launchpad for macOS 26/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Launchpad for macOS 26/i)).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Download Free/i })).toHaveAttribute("href");
-    expect(screen.getAllByRole("button", { name: /Unlock PRO/i })).toHaveLength(3);
+    expect(screen.getByRole("link", { name: /Buy PRO/i })).toHaveAttribute("href", "#pricing");
+    expect(screen.getAllByRole("button", { name: /Unlock PRO/i })).toHaveLength(2);
+    expect(screen.getByRole("combobox", { name: /Language/i })).toBeInTheDocument();
     expect(screen.queryByTestId("hero-visual")).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Why People Still Want Launchpad/i })).toBeInTheDocument();
     expect(screen.getByText(/not because they need one more launcher/i)).toBeInTheDocument();

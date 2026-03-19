@@ -11,7 +11,7 @@ const zh = {
     description:
       "oLauncher 把很多人依然怀念的视觉浏览节奏重新带回 Mac：看一眼网格、靠空间记忆定位、顺手打开，而不是被迫切成搜索式操作。",
     primaryCta: "免费下载",
-    secondaryCta: "解锁 PRO",
+    secondaryCta: "购买 PRO 版",
     meta: "支持 macOS 26 及更高版本",
     scene: {
       eyebrow: "视觉启动，再次成立",
@@ -85,6 +85,7 @@ const zh = {
   pricing: {
     heading: "双档终身授权",
     subtitle: "按你真实会用到的设备数量来买，一次买断，持续解锁全部 PRO 功能。",
+    ctaLabel: "解锁 PRO",
     recommendedTier: "double",
     tiers: [
       {

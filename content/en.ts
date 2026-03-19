@@ -11,7 +11,7 @@ const en = {
     description:
       "oLauncher brings back the visual browsing rhythm many Mac users still miss: glance across a grid, trust your spatial memory, and launch without switching mental modes.",
     primaryCta: "Download Free",
-    secondaryCta: "Unlock PRO",
+    secondaryCta: "Buy PRO",
     meta: "Runs on macOS 26 and later",
     scene: {
       eyebrow: "Visual launch, restored",
@@ -85,6 +85,7 @@ const en = {
   pricing: {
     heading: "Two lifetime plans",
     subtitle: "Pick the license count you actually need. Buy once, keep every PRO feature unlocked.",
+    ctaLabel: "Unlock PRO",
     recommendedTier: "double",
     tiers: [
       {
