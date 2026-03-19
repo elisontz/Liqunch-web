@@ -1,14 +1,12 @@
 import React from "react";
 import Script from "next/script";
 
-import { ExperienceSection } from "@/components/experience-section";
-import { FaqSection } from "@/components/faq-section";
-import { FeatureBento } from "@/components/feature-bento";
+import { FeatureRail } from "@/components/feature-rail";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { PricingSection } from "@/components/pricing-section";
-import { ProofStrip } from "@/components/proof-strip";
+import { StorySection } from "@/components/story-section";
 import { getContent } from "@/content";
 import { siteConfig, type Locale } from "@/lib/site";
 
@@ -26,7 +24,7 @@ export function SalesPage({ locale }: SalesPageProps) {
         <header className="site-header">
           <div className="site-header-copy">
             <p className="eyebrow">oLauncher</p>
-            <p className="header-copy">macOS launcher for people who still think in grids</p>
+            <p className="header-copy">A visual launcher for people who still think in grids.</p>
           </div>
           <LanguageSwitcher locale={locale} />
         </header>
@@ -40,20 +38,14 @@ export function SalesPage({ locale }: SalesPageProps) {
             primaryHref={siteConfig.downloadUrl}
             secondaryPriceId={siteConfig.singlePriceId}
             meta={content.hero.meta}
-            badges={content.hero.badges}
-            visualTiles={content.hero.visualTiles}
+            scene={content.hero.scene}
           />
-          <ProofStrip items={content.proofItems} />
-          <FeatureBento
-            heading={content.featureHeading}
-            intro={content.featureIntro}
-            features={content.featureHighlights}
+          <StorySection
+            heading={content.story.heading}
+            paragraphs={content.story.paragraphs}
+            contrastLines={content.story.contrastLines}
           />
-          <ExperienceSection
-            heading={content.experienceHeading}
-            intro={content.experienceIntro}
-            steps={content.experienceSteps}
-          />
+          <FeatureRail heading={content.featureRail.heading} items={content.featureRail.items} />
           <PricingSection
             heading={content.pricing.heading}
             subtitle={content.pricing.subtitle}
@@ -61,7 +53,6 @@ export function SalesPage({ locale }: SalesPageProps) {
             ctaLabel={content.hero.secondaryCta}
             recommendedTier={content.pricing.recommendedTier}
           />
-          <FaqSection heading={content.faqHeading} faqs={content.faqs} />
         </main>
         <Footer
           locale={locale}

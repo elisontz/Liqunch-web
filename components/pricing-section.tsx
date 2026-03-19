@@ -25,37 +25,35 @@ const priceIdMap = {
 
 export function PricingSection({ heading, subtitle, tiers, ctaLabel, recommendedTier }: PricingSectionProps) {
   return (
-    <section className="section-shell" id="pricing">
-      <div className="section-heading">
+    <section className="pricing-strip" id="pricing">
+      <div className="section-intro">
         <p className="section-kicker">Lifetime Plans</p>
         <h2>{heading}</h2>
         <p>{subtitle}</p>
       </div>
-      <div className="pricing-grid">
+      <div className="pricing-band">
         {tiers.map((tier) => (
           <article
             key={tier.name}
-            className={tier.priceId === recommendedTier ? "pricing-card pricing-card-recommended" : "pricing-card"}
+            className={tier.priceId === recommendedTier ? "pricing-plan pricing-plan-featured" : "pricing-plan"}
           >
-            <div className="pricing-card-top">
+            <div className="pricing-head">
+              <div>
+                <h3>{tier.name}</h3>
+                <p className="pricing-description">{tier.description}</p>
+              </div>
               {tier.priceId === recommendedTier ? <span className="pricing-badge">Best Value</span> : null}
-              <h3>{tier.name}</h3>
-              <p className="pricing-description">{tier.description}</p>
             </div>
             <div className="price-row">
               <span className="price">{tier.price}</span>
               <span className="original-price">{tier.originalPrice}</span>
             </div>
-            <ul>
+            <ul className="pricing-features">
               {tier.features.map((feature) => (
                 <li key={feature}>{feature}</li>
               ))}
             </ul>
-            <BuyButton
-              label={ctaLabel}
-              priceId={priceIdMap[tier.priceId]}
-              className="primary-button full-width"
-            />
+            <BuyButton label={ctaLabel} priceId={priceIdMap[tier.priceId]} className="pricing-button" />
           </article>
         ))}
       </div>

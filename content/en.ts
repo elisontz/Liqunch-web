@@ -7,75 +7,84 @@ const en = {
   },
   hero: {
     title: "Bring Back Launchpad",
-    subtitle: "on macOS 26",
+    subtitle: "for macOS 26",
     description:
-      "oLauncher restores the visual browsing flow, spatial memory, and native-feeling rhythm that many Mac users still want every day.",
+      "oLauncher brings back the visual browsing rhythm many Mac users still miss: glance across a grid, trust your spatial memory, and launch without switching mental modes.",
     primaryCta: "Download Free",
     secondaryCta: "Unlock PRO",
     meta: "Runs on macOS 26 and later",
-    badges: ["Gesture-first", "Spatial Memory", "Native-feeling", "Lifetime Unlock"],
-    visualTiles: [
-      { label: "Finder", tone: "blue", size: "wide" },
-      { label: "Safari", tone: "silver", size: "square" },
-      { label: "Notes", tone: "amber", size: "square" },
-      { label: "Mail", tone: "blue", size: "square" },
-      { label: "Calendar", tone: "silver", size: "square" },
-      { label: "Music", tone: "amber", size: "wide" },
-      { label: "Arc", tone: "blue", size: "square" },
-      { label: "Xcode", tone: "silver", size: "square" }
+    scene: {
+      eyebrow: "Visual launch, restored",
+      title: "A single stage for the apps you still remember by position.",
+      status: "macOS 26",
+      focusLabel: "Spatial memory intact",
+      focusText: "Gesture in. Scan once. Launch fast.",
+      tiles: [
+        { label: "Finder", tone: "blue", size: "wide" },
+        { label: "Safari", tone: "silver", size: "square" },
+        { label: "Notes", tone: "amber", size: "square" },
+        { label: "Mail", tone: "blue", size: "square" },
+        { label: "Calendar", tone: "silver", size: "square" },
+        { label: "Music", tone: "amber", size: "wide" },
+        { label: "Arc", tone: "blue", size: "square" },
+        { label: "Xcode", tone: "silver", size: "square" }
+      ]
+    }
+  },
+  story: {
+    heading: "Why People Still Want Launchpad",
+    paragraphs: [
+      "Launchpad was never just a different way to open apps. It gave people a visual map of their tools, and that map stayed in muscle memory.",
+      "When that map disappears, the problem is not speed alone. The desktop loses a quiet, spatial layer that made a Mac feel predictable.",
+      "oLauncher brings that layer back in a form that feels lighter, sharper, and more intentional for modern macOS."
+    ],
+    contrastLines: [
+      {
+        label: "What people miss",
+        detail: "A launcher you can scan visually instead of parsing line by line."
+      },
+      {
+        label: "What changed",
+        detail: "not because they need one more launcher, but because the familiar one stopped fitting their routine."
+      },
+      {
+        label: "What oLauncher keeps",
+        detail: "A grid-first desktop rhythm that still feels native, fast, and calm."
+      }
     ]
   },
-  proofItems: [
-    { label: "macOS 26", detail: "Built for Tahoe-era desktop workflows" },
-    { label: "Trackpad Gesture", detail: "Wake the launcher with a familiar movement" },
-    { label: "Hot Corners", detail: "Jump in without leaving your current task" },
-    { label: "Lifetime License", detail: "One purchase, all PRO features unlocked" }
-  ],
-  featureHeading: "Why Launchpad Feels Right Again",
-  featureIntro:
-    "The redesign focuses on the parts people actually miss: visual recall, frictionless triggers, and a grid that still feels like part of macOS.",
-  featureHighlights: [
-    {
-      eyebrow: "Signature",
-      title: "Gesture-friendly launch flow",
-      description:
-        "Wake the launcher with a trackpad gesture, keep your eyes on the grid, and let your muscle memory do the rest.",
-      size: "large"
-    },
-    {
-      eyebrow: "Fast access",
-      title: "Shortcut and hot corner triggers",
-      description: "Open your launcher from a keyboard shortcut or hot corner without breaking focus.",
-      size: "small"
-    },
-    {
-      eyebrow: "Personal layout",
-      title: "Custom grid layout",
-      description: "Tune density and spacing so the launcher feels like your own workspace, not Apple's default.",
-      size: "small"
-    },
-    {
-      eyebrow: "Calm canvas",
-      title: "Hide what you never launch",
-      description: "Keep utility clutter out of sight and make the grid stay readable.",
-      size: "small"
-    },
-    {
-      eyebrow: "Recall faster",
-      title: "Rename and organize apps",
-      description: "Improve scanning speed with labels that match how you actually remember tools.",
-      size: "small"
-    },
-    {
-      eyebrow: "Native build",
-      title: "Native and lightweight",
-      description: "Built in Swift for low overhead and a launch flow that feels at home on macOS.",
-      size: "small"
-    }
-  ],
+  featureRail: {
+    heading: "Everything you actually need, laid out cleanly",
+    items: [
+      {
+        title: "Trackpad gesture wake-up",
+        description: "Open the launcher with a familiar gesture and stay in the same desktop rhythm."
+      },
+      {
+        title: "Hot corners and keyboard triggers",
+        description: "Jump in from the corner or a shortcut without changing how you work."
+      },
+      {
+        title: "A grid you can tune",
+        description: "Adjust density and spacing so the layout matches how your eyes scan apps."
+      },
+      {
+        title: "Hide the clutter",
+        description: "Keep one-off utilities out of sight and let the main stage stay readable."
+      },
+      {
+        title: "Rename for recall",
+        description: "Organize labels around how you remember tools, not around default app names."
+      },
+      {
+        title: "Built natively in Swift",
+        description: "Stay lightweight, responsive, and aligned with the feel of the platform."
+      }
+    ]
+  },
   pricing: {
     heading: "Two lifetime plans",
-    subtitle: "Buy once, unlock every PRO feature, and pick the setup that matches how many Macs you actually use.",
+    subtitle: "Pick the license count you actually need. Buy once, keep every PRO feature unlocked.",
     recommendedTier: "double",
     tiers: [
       {
@@ -125,23 +134,6 @@ const en = {
     {
       question: "How do I contact support?",
       answer: "Send mail to elisonyung@gmail.com and include your app version plus purchase email if relevant."
-    }
-  ],
-  experienceHeading: "Back in Flow in Three Moves",
-  experienceIntro:
-    "The setup stays as light as the app itself. Download it, drop it into place, and unlock PRO when you are ready.",
-  experienceSteps: [
-    {
-      title: "Download the latest DMG",
-      description: "Grab the notarized build directly from the website and keep the install path simple."
-    },
-    {
-      title: "Drag it into Applications",
-      description: "Install like a normal Mac app, launch once, and finish the short first-run setup."
-    },
-    {
-      title: "Unlock PRO with your license key",
-      description: "Paste your key, activate the purchased device count, and keep the same launcher layout across your routine."
     }
   ],
   footer: {

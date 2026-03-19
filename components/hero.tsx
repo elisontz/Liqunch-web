@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { BuyButton } from "@/components/buy-button";
 
-type HeroTile = {
+type SceneTile = {
   label: string;
   tone: "blue" | "silver" | "amber";
   size: "wide" | "square";
@@ -17,8 +17,14 @@ type HeroProps = {
   primaryHref: string;
   secondaryPriceId: string;
   meta: string;
-  badges: readonly string[];
-  visualTiles: ReadonlyArray<HeroTile>;
+  scene: {
+    eyebrow: string;
+    title: string;
+    status: string;
+    focusLabel: string;
+    focusText: string;
+    tiles: ReadonlyArray<SceneTile>;
+  };
 };
 
 export function Hero({
@@ -30,25 +36,17 @@ export function Hero({
   primaryHref,
   secondaryPriceId,
   meta,
-  badges,
-  visualTiles
+  scene
 }: HeroProps) {
   return (
     <section className="hero">
       <div className="hero-copy">
-        <p className="eyebrow">oLauncher for Mac</p>
+        <p className="eyebrow">oLauncher</p>
         <h1>
           <span>{title}</span>
           <span className="hero-subtitle-line">{subtitle}</span>
         </h1>
         <p className="lead">{description}</p>
-        <div className="hero-badge-row" aria-label="Hero highlights">
-          {badges.map((badge) => (
-            <span key={badge} className="hero-badge">
-              {badge}
-            </span>
-          ))}
-        </div>
         <div className="hero-actions">
           <Link href={primaryHref} className="primary-button">
             {primaryCta}
@@ -58,32 +56,27 @@ export function Hero({
         <p className="meta">{meta}</p>
       </div>
       <div className="hero-visual-shell" data-testid="hero-visual">
-        <div className="hero-orbit hero-orbit-left" />
-        <div className="hero-orbit hero-orbit-right" />
-        <div className="launcher-panel">
-          <div className="launcher-panel-top">
+        <div className="hero-glow hero-glow-left" />
+        <div className="hero-glow hero-glow-right" />
+        <div className="scene-stage">
+          <div className="scene-header">
             <div>
-              <p className="launcher-caption">Visual app browsing</p>
-              <p className="launcher-title">Launchpad, back in rhythm</p>
+              <p className="scene-eyebrow">{scene.eyebrow}</p>
+              <p className="scene-title">{scene.title}</p>
             </div>
-            <span className="launcher-status">Live</span>
+            <span className="scene-status">{scene.status}</span>
           </div>
-          <div className="launcher-grid">
-            {visualTiles.map((tile) => (
-              <div
-                key={tile.label}
-                className="launcher-tile"
-                data-tone={tile.tone}
-                data-size={tile.size}
-              >
-                <span className="launcher-tile-dot" />
-                <span className="launcher-tile-label">{tile.label}</span>
+          <div className="scene-grid">
+            {scene.tiles.map((tile) => (
+              <div key={tile.label} className="scene-tile" data-tone={tile.tone} data-size={tile.size}>
+                <span className="scene-tile-dot" />
+                <span className="scene-tile-label">{tile.label}</span>
               </div>
             ))}
           </div>
-          <div className="launcher-focus-card">
-            <p className="launcher-caption">Spatial memory intact</p>
-            <p className="launcher-focus-text">Gesture in. Scan once. Launch fast.</p>
+          <div className="scene-footer">
+            <p className="scene-focus-label">{scene.focusLabel}</p>
+            <p className="scene-focus-text">{scene.focusText}</p>
           </div>
         </div>
       </div>

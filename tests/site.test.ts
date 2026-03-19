@@ -35,17 +35,17 @@ describe("site locale helpers", () => {
     const zh = getContent("zh");
     const en = getContent("en");
 
-    expect(zh.hero.badges).toHaveLength(4);
-    expect(en.hero.badges).toHaveLength(4);
-    expect(zh.hero.visualTiles.length).toBeGreaterThanOrEqual(8);
-    expect(en.hero.visualTiles.length).toBeGreaterThanOrEqual(8);
-    expect(zh.proofItems).toHaveLength(4);
-    expect(en.proofItems).toHaveLength(4);
-    expect(zh.featureHighlights.length).toBeGreaterThanOrEqual(5);
-    expect(en.featureHighlights.length).toBeGreaterThanOrEqual(5);
-    expect(zh.experienceSteps).toHaveLength(3);
-    expect(en.experienceSteps).toHaveLength(3);
+    expect(zh.hero.scene.tiles.length).toBeGreaterThanOrEqual(8);
+    expect(en.hero.scene.tiles.length).toBeGreaterThanOrEqual(8);
+    expect(zh.story.paragraphs).toHaveLength(3);
+    expect(en.story.paragraphs).toHaveLength(3);
+    expect(zh.story.contrastLines).toHaveLength(3);
+    expect(en.story.contrastLines).toHaveLength(3);
+    expect(zh.featureRail.items.length).toBeGreaterThanOrEqual(5);
+    expect(en.featureRail.items.length).toBeGreaterThanOrEqual(5);
     expect(zh.pricing.recommendedTier).toBeDefined();
     expect(en.pricing.recommendedTier).toBeDefined();
+    expect(zh.faqs.length).toBeGreaterThan(0);
+    expect(en.faqs.length).toBeGreaterThan(0);
   });
 });

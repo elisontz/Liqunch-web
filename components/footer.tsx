@@ -27,14 +27,16 @@ export function Footer({
   currentVersion,
   releaseDate
 }: FooterProps) {
+  const summary =
+    locale === "zh"
+      ? `${releaseLabel}: ${releaseDate} · 版本 ${currentVersion}`
+      : `${releaseLabel}: ${releaseDate} · Version ${currentVersion}`;
+
   return (
     <footer className="site-footer">
       <div className="footer-brand">
         <p className="eyebrow">oLauncher</p>
-        <h2>Bring visual launch back to your desktop.</h2>
-        <p>
-          {releaseLabel}: {releaseDate} · Version {currentVersion}
-        </p>
+        <p>{summary}</p>
       </div>
       <div className="footer-links">
         <Link href={releaseHref}>{releaseText}</Link>
