@@ -86,7 +86,7 @@ const zh = {
     {
       question: "支持退款吗？",
       answer:
-        "如需退款，请通过支持邮箱联系，并附上购买邮箱与收据信息，我们会按实际情况处理。"
+        "支持。通过 Paddle 购买的订单按照 Paddle 退款政策处理：欧盟、欧洲经济区、瑞士、英国、土耳其和以色列为 14 天；韩国、巴西、中国和加拿大为 7 天；新加坡为 5 天。"
     },
     {
       question: "如何联系支持？",
@@ -116,10 +116,10 @@ const zh = {
       "oLauncher Site 仅收集运行官网、通过 Paddle 处理支付，以及回复支持请求所需的必要信息。",
     termsTitle: "使用条款",
     termsBody:
-      "这些条款适用于以 oLauncher 名义提供的产品与服务。购买授权后，你可以在所购买档位对应数量的 Mac 设备上激活并使用 oLauncher。",
+      "这些条款适用于 oLauncher、oLauncher 官网，以及由 oLauncher 提供的相关产品与服务。购买授权后，你可以在所购买档位对应数量的 Mac 设备上激活并使用 oLauncher。",
     refundTitle: "退款政策",
     refundBody:
-      "如果您购买 oLauncher 后遇到无法激活、重复扣费或我们无法协助解决的技术问题，请通过支持邮箱提交退款申请，并附上购买邮箱、收据与问题说明。我们会根据实际情况进行审核与处理。"
+      "通过 Paddle 购买 oLauncher 的订单，退款按照 Paddle Buyer Terms 和 Paddle Refund Policy 处理。欧盟、欧洲经济区、瑞士、英国、土耳其和以色列的消费者可在交易日期后 14 天内申请退款。韩国、巴西、中国和加拿大的消费者可在交易日期后 7 天内申请退款。新加坡的消费者可在交易日期后 5 天内申请退款。退款可通过 Paddle 收据邮件中的链接或 paddle.net 提交。"
   },
   release: {
     title: "更新日志",

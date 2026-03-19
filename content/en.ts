@@ -86,7 +86,7 @@ const en = {
     {
       question: "Can I request a refund?",
       answer:
-        "Refund requests are handled through support. Include the receipt email and a short explanation of the issue."
+        "Yes. Refunds for purchases made through Paddle follow Paddle's refund policy: 14 days for the European Union, EEA, Switzerland, the United Kingdom, Turkey, and Israel; 7 days for South Korea, Brazil, China, and Canada; and 5 days for Singapore."
     },
     {
       question: "How do I contact support?",
@@ -116,10 +116,10 @@ const en = {
       "oLauncher Site collects only the data required to run the website, process payments through Paddle, and answer support requests.",
     termsTitle: "Terms of Service",
     termsBody:
-      "These Terms apply to the products and services provided under the trading name oLauncher. Purchasing a license grants the right to activate oLauncher on the number of Macs included in the purchased tier.",
+      "These Terms apply to oLauncher, the oLauncher website, and the related products and services provided by oLauncher. Purchasing a license grants the right to activate oLauncher on the number of Macs included in the purchased tier.",
     refundTitle: "Refund Policy",
     refundBody:
-      "If you purchase oLauncher and run into activation failures, duplicate charges, or a technical issue that we cannot resolve, contact support to request a refund. Include your purchase email, receipt details, and a short description of the issue so we can review the case."
+      "Refunds for purchases made through Paddle are handled in accordance with Paddle Buyer Terms and the Paddle Refund Policy. Consumers in the European Union, EEA, Switzerland, the United Kingdom, Turkey, and Israel may request a refund within 14 days of the transaction date. Consumers in South Korea, Brazil, China, and Canada may request a refund within 7 days of the transaction date. Consumers in Singapore may request a refund within 5 days of the transaction date. Refund requests can be submitted through the Paddle receipt links or at paddle.net."
   },
   release: {
     title: "Release Notes",
