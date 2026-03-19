@@ -5,6 +5,10 @@ import { locales, normalizeLocale } from "@/lib/site";
 
 type Params = { locale: string };
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
 export default async function TermsPage({ params }: { params: Promise<Params> }) {
   const { locale } = await params;
   if (!locales.includes(locale as (typeof locales)[number])) {
