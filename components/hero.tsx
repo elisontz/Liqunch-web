@@ -9,6 +9,11 @@ type HeroProps = {
   primaryHref: string;
   secondaryHref: string;
   meta: string;
+  releaseLabel: string;
+  releaseDate: string;
+  currentVersion: string;
+  versionLabel: string;
+  releaseHref: string;
 };
 
 export function Hero({
@@ -19,7 +24,12 @@ export function Hero({
   secondaryCta,
   primaryHref,
   secondaryHref,
-  meta
+  meta,
+  releaseLabel,
+  releaseDate,
+  currentVersion,
+  versionLabel,
+  releaseHref
 }: HeroProps) {
   return (
     <section className="hero">
@@ -37,7 +47,15 @@ export function Hero({
             {secondaryCta}
           </Link>
         </div>
-        <p className="meta">{meta}</p>
+        <div className="meta">
+          <span>{meta}</span>
+          <span className="meta-separator">·</span>
+          <Link href={releaseHref} className="meta-link">
+            <span>{releaseLabel}: {releaseDate}</span>
+            <span className="meta-separator">·</span>
+            <span>{versionLabel} {currentVersion}</span>
+          </Link>
+        </div>
       </div>
     </section>
   );

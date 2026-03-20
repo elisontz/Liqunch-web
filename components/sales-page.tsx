@@ -1,12 +1,14 @@
 import React from "react";
 import Script from "next/script";
+import Image from "next/image";
 
 import { FeatureRail } from "@/components/feature-rail";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { PricingSection } from "@/components/pricing-section";
-import { StorySection } from "@/components/story-section";
+import { VideoSection } from "@/components/video-section";
+// import { StorySection } from "@/components/story-section";
 import { getContent } from "@/content";
 import { siteConfig, type Locale } from "@/lib/site";
 
@@ -23,6 +25,7 @@ export function SalesPage({ locale }: SalesPageProps) {
       <div className="page-shell">
         <header className="site-header">
           <div className="site-header-copy">
+            <Image src="/images/logo.png" alt="oLauncher Logo" width={40} height={40} className="site-logo" />
             <p className="site-title">oLauncher</p>
           </div>
           <LanguageSwitcher locale={locale} />
@@ -37,12 +40,25 @@ export function SalesPage({ locale }: SalesPageProps) {
             primaryHref={siteConfig.downloadUrl}
             secondaryHref="#pricing"
             meta={content.hero.meta}
+            releaseLabel={content.footer.releaseLabel}
+            releaseDate={siteConfig.releaseDate}
+            currentVersion={siteConfig.currentVersion}
+            versionLabel={content.footer.releaseVersion}
+            releaseHref={content.footer.releaseHref}
           />
-          <StorySection
-            heading={content.story.heading}
-            paragraphs={content.story.paragraphs}
-            contrastLines={content.story.contrastLines}
-          />
+          <VideoSection locale={locale} />
+          <section className="story-image-section">
+            <div className="story-image-container">
+              <Image 
+                src="/images/Full-screen mode main image.jpg" 
+                alt="oLauncher Interface" 
+                width={1200} 
+                height={800} 
+                className="story-image"
+                priority
+              />
+            </div>
+          </section>
           <FeatureRail heading={content.featureRail.heading} items={content.featureRail.items} />
           <PricingSection
             heading={content.pricing.heading}
@@ -54,15 +70,11 @@ export function SalesPage({ locale }: SalesPageProps) {
         </main>
         <Footer
           locale={locale}
-          releaseLabel={content.footer.releaseLabel}
-          releaseHref={content.footer.releaseHref}
-          releaseText={content.footer.releaseText}
           privacyText={content.footer.privacyText}
           termsText={content.footer.termsText}
           refundText={content.footer.refundText}
+          contactText={content.footer.contactText}
           supportEmail={siteConfig.supportEmail}
-          currentVersion={siteConfig.currentVersion}
-          releaseDate={siteConfig.releaseDate}
         />
       </div>
     </>

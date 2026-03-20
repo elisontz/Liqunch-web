@@ -7,9 +7,9 @@ const en = {
   },
   hero: {
     title: "Bring Back Launchpad",
-    subtitle: "for macOS 26",
+    subtitle: "for macOS Tahoe",
     description:
-      "oLauncher brings back the visual browsing rhythm many Mac users still miss: glance across a grid, trust your spatial memory, and launch without switching mental modes.",
+      "oLauncher brings back the classic way of launching apps that many people still miss to macOS Tahoe: \n glance across a grid, trust your spatial memory, and launch without switching mental modes.",
     primaryCta: "Download Free",
     secondaryCta: "Buy PRO",
     meta: "Runs on macOS 26 and later",
@@ -54,31 +54,47 @@ const en = {
     ]
   },
   featureRail: {
-    heading: "Everything you actually need, laid out cleanly",
+    heading: "Key Features of oLauncher",
     items: [
       {
-        title: "Trackpad gesture wake-up",
-        description: "Open the launcher with a familiar gesture and stay in the same desktop rhythm."
-      },
-      {
-        title: "Hot corners and keyboard triggers",
-        description: "Jump in from the corner or a shortcut without changing how you work."
-      },
-      {
-        title: "A grid you can tune",
-        description: "Adjust density and spacing so the layout matches how your eyes scan apps."
-      },
-      {
-        title: "Hide the clutter",
-        description: "Keep one-off utilities out of sight and let the main stage stay readable."
-      },
-      {
-        title: "Rename for recall",
-        description: "Organize labels around how you remember tools, not around default app names."
-      },
-      {
         title: "Built natively in Swift",
-        description: "Stay lightweight, responsive, and aligned with the feel of the platform."
+        description: "Developed with native Swift for peak performance and minimal resource usage."
+      },
+      {
+        title: "Native Launchpad Experience",
+        description: "Familiar interface and interactions, so you don't have to learn a new workflow."
+      },
+      {
+        title: "Liquid Glass UI",
+        description: "Visually integrated with the system for a seamless, modern aesthetic."
+      },
+      {
+        title: "Customizable Grid Layout",
+        description: "Adjust icon density and spacing to fit your screen size and visual habits."
+      },
+      {
+        title: "Hide Unused Apps",
+        description: "Keep rarely used apps out of the main view, making your favorites easier to find."
+      },
+      {
+        title: "Two Navigation Modes",
+        description: "Choose between horizontal or vertical scrolling to suit your preference."
+      },
+      {
+        title: "Contextual Menus",
+        description: "Convenient right-click menus for quick actions and management."
+      },
+      {
+        title: "Shortcut Activation",
+        description: "Launch instantly via customizable global keyboard shortcuts."
+      },
+      {
+        title: "Two Display Modes",
+        description: "Toggle between windowed and full-screen modes at any time."
+      },
+      {
+        title: "Recently Used Apps",
+        description: "Pinned top row for recently opened apps, no searching required."
       }
     ]
   },
@@ -139,11 +155,13 @@ const en = {
   ],
   footer: {
     releaseLabel: "Last updated",
+    releaseVersion: "Version",
     releaseHref: "/en/release",
     releaseText: "Release notes",
     privacyText: "Privacy Policy",
     termsText: "Terms of Service",
-    refundText: "Refund Policy"
+    refundText: "Refund Policy",
+    contactText: "Contact Us"
   },
   legal: {
     privacyTitle: "Privacy Policy",

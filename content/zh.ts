@@ -7,9 +7,9 @@ const zh = {
   },
   hero: {
     title: "找回 Launchpad",
-    subtitle: "给 macOS 26",
+    subtitle: "给 macOS Tahoe",
     description:
-      "oLauncher 把很多人依然怀念的视觉浏览节奏重新带回 Mac：看一眼网格、靠空间记忆定位、顺手打开，而不是被迫切成搜索式操作。",
+      "oLauncher 把很多人依然怀念的经典App启动方式带回macOS Tahoe：\n看一眼网格、靠空间记忆定位、顺手打开，而不是被迫切成搜索式操作。",
     primaryCta: "免费下载",
     secondaryCta: "购买 PRO 版",
     meta: "支持 macOS 26 及更高版本",
@@ -54,38 +54,54 @@ const zh = {
     ]
   },
   featureRail: {
-    heading: "该有的能力，直接排开",
+    heading: "oLauncher 主要特色功能",
     items: [
       {
-        title: "触控板手势唤起",
-        description: "用熟悉的动作进入启动台，不需要重新适应另一套操作逻辑。"
+        title: "Swift原生语言开发",
+        description: "用Swift原生语言开发，轻量且高性能。"
       },
       {
-        title: "触发角与快捷键",
-        description: "从角落或键盘直接进入，保留不同人的习惯入口。"
+        title: "接近原生启动台的操作体验",
+        description: "熟悉的启动台界面和操作，不需要重新适应另一套操作逻辑。"
       },
       {
-        title: "可以自己调的网格",
+        title: "Liquid Glass UI效果",
+        description: "与系统完美结合。"
+      },
+      {
+        title: "自定义网格布局",
         description: "按你的屏幕尺寸和浏览习惯调整密度与间距。"
       },
       {
-        title: "把杂项藏起来",
-        description: "不常开的应用退出主舞台，让真正常用的东西更好扫。"
+        title: "隐藏不常用的应用",
+        description: "不常开的应用退出主舞台，让真正常用的东西更好找。"
       },
       {
-        title: "重命名和整理",
-        description: "按你自己的记忆方式组织应用，而不是被默认命名牵着走。"
+        title: "两种导航方式",
+        description: "横向和纵向的导航方式，满足不同人的使用习惯。"
       },
       {
-        title: "Swift 原生构建",
-        description: "保持轻量和响应速度，也更贴近 macOS 本身的手感。"
+        title: "右键快捷菜单",
+        description: "便捷的右键快捷菜单，快速操作。"
+      },
+      {
+        title: "快捷键启动",
+        description: "通过全局快捷键启动，可自定义。"
+      },
+      {
+        title: "两种显示模式",
+        description: "窗口模式与全屏模式，随心切换。"
+      },
+      {
+        title: "最近使用应用",
+        description: "固定首排显示最近使用应用，无需再搜索。"
       }
     ]
   },
   pricing: {
-    heading: "双档终身授权",
-    subtitle: "按你真实会用到的设备数量来买，一次买断，持续解锁全部 PRO 功能。",
-    ctaLabel: "解锁 PRO",
+    heading: "PRO 版授权",
+    subtitle: "",
+    ctaLabel: "购买",
     recommendedTier: "double",
     tiers: [
       {
@@ -139,11 +155,13 @@ const zh = {
   ],
   footer: {
     releaseLabel: "最近更新",
+    releaseVersion: "版本",
     releaseHref: "/zh/release",
     releaseText: "更新日志",
     privacyText: "隐私政策",
     termsText: "使用条款",
-    refundText: "退款政策"
+    refundText: "退款政策",
+    contactText: "联系我们"
   },
   legal: {
     privacyTitle: "隐私政策",
