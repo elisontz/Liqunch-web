@@ -71,11 +71,12 @@ export function parseReleaseBody(body: string | null, locale: string): string[] 
 function getGitHubHeaders() {
   const headers: Record<string, string> = {
     "User-Agent": "Liqunch-Site",
-    Accept: "application/vnd.github.v3+json"
+    "Accept": "application/vnd.github.v3+json"
   };
+  // Only add token if it looks valid to avoid fetch errors
   const token = process.env.GITHUB_TOKEN;
-  if (token) {
-    headers["Authorization"] = `token ${token}`;
+  if (token && token.trim().length > 0) {
+    headers["Authorization"] = `token ${token.trim()}`;
   }
   return headers;
 }
@@ -91,15 +92,18 @@ export async function getLatestReleaseInfo(locale: string = "zh"): Promise<Relea
   try {
     const res = await fetch("https://api.github.com/repos/elisontz/Liqunch-Lite/releases/latest", {
       headers: getGitHubHeaders(),
+      // Use a shorter revalidate for debugging, or keep it 3600
       next: { revalidate: 3600 }
     });
     
     if (!res.ok) {
-      console.warn(`GitHub API returned ${res.status} for latest release`);
+      console.warn(`GitHub API latest release error: ${res.status}`);
       return fallback;
     }
 
     const data = await res.json();
+    if (!data || typeof data !== "object") return fallback;
+
     const asset = data.assets?.find((a: any) => a.name.endsWith(".dmg"));
     
     return {
@@ -109,7 +113,7 @@ export async function getLatestReleaseInfo(locale: string = "zh"): Promise<Relea
       notes: parseReleaseBody(data.body, locale)
     };
   } catch (error) {
-    console.error("Failed to fetch latest release:", error);
+    console.error("Critical error fetching latest release:", error);
     return fallback;
   }
 }
@@ -122,11 +126,13 @@ export async function getAllReleases(locale: string = "zh"): Promise<ReleaseInfo
     });
     
     if (!res.ok) {
-      console.warn(`GitHub API returned ${res.status} for all releases`);
+      console.warn(`GitHub API all releases error: ${res.status}`);
       return [];
     }
 
     const data = await res.json();
+    if (!Array.isArray(data)) return [];
+
     return data.map((release: any) => {
       const asset = release.assets?.find((a: any) => a.name.endsWith(".dmg"));
       return {
@@ -137,7 +143,7 @@ export async function getAllReleases(locale: string = "zh"): Promise<ReleaseInfo
       };
     });
   } catch (error) {
-    console.error("Failed to fetch all releases:", error);
+    console.error("Critical error fetching all releases:", error);
     return [];
   }
 }

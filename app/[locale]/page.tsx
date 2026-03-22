@@ -25,30 +25,12 @@ export async function generateMetadata({
 }
 
 export default async function LocaleHomePage({ params }: { params: Promise<Params> }) {
-  try {
-    const { locale } = await params;
-    if (!locales.includes(locale as (typeof locales)[number])) {
-      notFound();
-    }
-    const normalized = normalizeLocale(locale);
-    
-    // DEBUG: Disable API call for now to test rendering
-    // const releaseInfo = await getLatestReleaseInfo(normalized);
-    const releaseInfo = {
-      downloadUrl: siteConfig.downloadUrl,
-      version: siteConfig.currentVersion,
-      date: siteConfig.releaseDate,
-      notes: []
-    };
-
-    return <SalesPage locale={normalized} releaseInfo={releaseInfo} />;
-  } catch (err: any) {
-    return (
-      <div style={{ padding: '2rem', color: 'red', background: 'white' }}>
-        <h1>Debug Error</h1>
-        <p>{err?.message || 'Unknown error'}</p>
-        <pre>{err?.stack}</pre>
-      </div>
-    );
+  const { locale } = await params;
+  if (!locales.includes(locale as (typeof locales)[number])) {
+    notFound();
   }
+  const normalized = normalizeLocale(locale);
+  const releaseInfo = await getLatestReleaseInfo(normalized);
+
+  return <SalesPage locale={normalized} releaseInfo={releaseInfo} />;
 }
