@@ -1,48 +1,44 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Define constants locally to avoid importing from lib/site, which might cause 
-// issues in the Edge Runtime on certain platforms if the file is too complex.
 const locales = ["zh", "en"];
 const defaultLocale = "zh";
+
+function getPreferredLocale(acceptLanguage: string | null): string {
+  if (!acceptLanguage) return defaultLocale;
+  
+  // Parse the Accept-Language header to extract language priorities
+  // e.g. "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
+  const langs = acceptLanguage
+    .split(",")
+    .map((lang) => {
+      const [code, q] = lang.trim().split(";q=");
+      return { code: code.trim().toLowerCase(), q: q ? parseFloat(q) : 1.0 };
+    })
+    .sort((a, b) => b.q - a.q);
+
+  for (const { code } of langs) {
+    if (code.startsWith("zh")) return "zh";
+    if (code.startsWith("en")) return "en";
+  }
+
+  return defaultLocale;
+}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Check if the current path already has a locale
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  );
-
-  if (pathnameHasLocale) return;
-
-  // Root path redirection with language detection
-  if (pathname === "/") {
-    const acceptLanguage = request.headers.get("accept-language");
-    let preferredLocale: string = defaultLocale;
-
-    if (acceptLanguage) {
-      // Simple language detection logic
-      const languages = acceptLanguage.toLowerCase();
-      if (languages.includes("en")) {
-        if (languages.includes("zh")) {
-          const zhIndex = languages.indexOf("zh");
-          const enIndex = languages.indexOf("en");
-          preferredLocale = zhIndex < enIndex ? "zh" : "en";
-        } else {
-          preferredLocale = "en";
-        }
-      } else if (languages.includes("zh")) {
-        preferredLocale = "zh";
-      }
-    }
-
-    return NextResponse.redirect(new URL(`/${preferredLocale}`, request.url));
+  // Only handle the root path - let everything else pass through normally
+  if (pathname !== "/") {
+    return NextResponse.next();
   }
+
+  const acceptLanguage = request.headers.get("accept-language");
+  const preferredLocale = getPreferredLocale(acceptLanguage);
+
+  return NextResponse.redirect(new URL(`/${preferredLocale}`, request.url));
 }
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next, static, images, etc.)
-    "/((?!api|_next/static|_next/image|favicon.ico|.*\\.png|.*\\.jpg|.*\\.svg|.*\\.dmg|.*\\.html).*)",
-  ],
+  // Only match the exact root path
+  matcher: ["/"],
 };
