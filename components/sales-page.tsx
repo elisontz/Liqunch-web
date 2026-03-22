@@ -50,7 +50,7 @@ export function SalesPage({ locale }: SalesPageProps) {
           <section className="story-image-section">
             <div className="story-image-container">
               <Image 
-                src="/images/Full-screen mode main image.jpg" 
+                src="https://raw.githubusercontent.com/elisontz/Liqunch-web/refs/heads/main/public/images/Full-screen%20mode%20main%20image.jpg" 
                 alt="Liqunch Interface" 
                 width={1200} 
                 height={800} 
