@@ -28,7 +28,7 @@ export const siteConfig = {
   supportEmail: requiredEnv("NEXT_PUBLIC_SUPPORT_EMAIL", "elisonyung@gmail.com"),
   downloadUrl: requiredEnv(
     "NEXT_PUBLIC_DOWNLOAD_URL",
-    "https://downloads.liqunch.app/stable/Liqunch-20260319.dmg"
+    "https://github.com/elisontz/Liqunch-Lite/releases/download/v1.0.0/Liqunch-v1.0.0.dmg"
   ),
   paddleEnv: requiredEnv("NEXT_PUBLIC_PADDLE_ENV", "sandbox"),
   paddleClientToken: process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN || "",
@@ -78,6 +78,9 @@ export async function getLatestReleaseInfo(locale: string = "zh"): Promise<Relea
 
   try {
     const res = await fetch("https://api.github.com/repos/elisontz/Liqunch-Lite/releases/latest", {
+      headers: {
+        "User-Agent": "Liqunch-Site"
+      },
       next: { revalidate: 3600 }
     });
     
@@ -101,6 +104,9 @@ export async function getLatestReleaseInfo(locale: string = "zh"): Promise<Relea
 export async function getAllReleases(locale: string = "zh"): Promise<ReleaseInfo[]> {
   try {
     const res = await fetch("https://api.github.com/repos/elisontz/Liqunch-Lite/releases", {
+      headers: {
+        "User-Agent": "Liqunch-Site"
+      },
       next: { revalidate: 3600 }
     });
     

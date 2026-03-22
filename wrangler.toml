@@ -5,7 +5,7 @@ compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
 
 [vars]
-NEXT_PUBLIC_DOWNLOAD_URL = "https://github.com/elisontz/Liqunch-Lite/releases/latest/download/Liqunch.dmg"
+NEXT_PUBLIC_DOWNLOAD_URL = "https://github.com/elisontz/Liqunch-Lite/releases/download/v1.0.0/Liqunch-v1.0.0.dmg"
 NEXT_PUBLIC_PADDLE_ENV = "sandbox"
 NEXT_PUBLIC_PADDLE_CLIENT_TOKEN = "test_1fca214a3ba742fe26a6c259f7b"
 NEXT_PUBLIC_PADDLE_SINGLE_PRICE_ID = "pri_01km5w6hdd1vwt1v7q79956msf"
