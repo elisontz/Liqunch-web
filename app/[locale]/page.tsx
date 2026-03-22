@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { SalesPage } from "@/components/sales-page";
 import { getContent } from "@/content";
-import { locales, normalizeLocale, getLatestReleaseInfo, siteConfig } from "@/lib/site";
+import { locales, normalizeLocale, getLatestReleaseInfo } from "@/lib/site";
 
 export const runtime = "edge";
 
