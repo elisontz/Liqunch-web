@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { PricingSection } from "@/components/pricing-section";
-import { VideoSection } from "@/components/video-section";
+// import { VideoSection } from "@/components/video-section";
 // import { StorySection } from "@/components/story-section";
 import { getContent } from "@/content";
 import { siteConfig, type Locale } from "@/lib/site";
@@ -46,7 +46,7 @@ export function SalesPage({ locale }: SalesPageProps) {
             versionLabel={content.footer.releaseVersion}
             releaseHref={content.footer.releaseHref}
           />
-          <VideoSection locale={locale} />
+{/* <VideoSection locale={locale} /> */}
           <section className="story-image-section">
             <div className="story-image-container">
               <Image 
